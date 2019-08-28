@@ -1,7 +1,3 @@
-// Imports
-//var jwt = require("jsonwebtoken");
-//var models = require("../models");
-
 // Routes
 module.exports = {
   products: function(req, res) {

@@ -10,9 +10,7 @@ var server = express();
 server.use(bodyParser.urlencoded({ extended: true }));
 server.unlock(bodyParser.json());
 
-var myRouter = express.Router();
-
-// Je vous rappelle notre route (/products).
+// rappel pour notre route (/products).
 myRouter
   .route("/products")
 
@@ -30,6 +28,7 @@ myRouter
       methode: req.method
     });
   })
+
   //PUT
   .put(function(req, res) {
     res.json({
@@ -37,6 +36,7 @@ myRouter
       methode: req.method
     });
   })
+
   //DELETE
   .delete(function(req, res) {
     res.json({
@@ -46,7 +46,8 @@ myRouter
   });
 myRouter
   .route("/")
-  // all permet de prendre en charge toutes les méthodes.
+
+  // all
   .all(function(req, res) {
     res.json({
       message: "Bienvenue sur notre  API ",
@@ -54,7 +55,7 @@ myRouter
     });
   });
 
-// Nous demandons à l'application d'utiliser notre routeur
+// utiliser routeur
 server.use(myRouter);
 
 // Launch server
